@@ -32,13 +32,11 @@ public class ProductController {
         model.addAttribute("category", category);
         model.addAttribute("sum", sumValue);
         model.addAttribute("productMap", productRepository.getProductMap());
-
         return "products";
     }
 
     @PostMapping("/dodaj")
     public String add(Product product) {
-
         productRepository.addToAllProducts(product);
         productRepository.addToListByCategory(product.getCategory(), product);
         return "redirect:/";
