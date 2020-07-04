@@ -31,7 +31,7 @@ public class Product {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", category=" + category.getDefinition() +
+                ", category=" + category +
                 '}';
     }
 }
