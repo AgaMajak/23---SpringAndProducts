@@ -42,7 +42,7 @@ public class ProductRepository {
         productMap.put("Wszystkie produkty", allProducts);
     }
 
-    public Map<String, List<Product>> getProductMap() {
+    public Map<String, List<Product>> findAllInMap() {
         return productMap;
     }
 

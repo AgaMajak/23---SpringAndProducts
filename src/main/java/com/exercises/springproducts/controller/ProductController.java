@@ -22,7 +22,7 @@ public class ProductController {
     @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("newProduct", new Product());
-        model.addAttribute("productMap", productRepository.getProductMap());
+        model.addAttribute("productMap", productRepository.findAllInMap());
         return "home";
     }
 
@@ -31,7 +31,7 @@ public class ProductController {
         double sumValue = productRepository.sumOfPrices(category);
         model.addAttribute("category", category);
         model.addAttribute("sum", sumValue);
-        model.addAttribute("productMap", productRepository.getProductMap());
+        model.addAttribute("productMap", productRepository.findAllInMap());
         return "products";
     }
 
