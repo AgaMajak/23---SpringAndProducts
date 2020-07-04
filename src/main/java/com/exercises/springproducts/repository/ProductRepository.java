@@ -4,10 +4,7 @@ import com.exercises.springproducts.data.Category;
 import com.exercises.springproducts.data.Product;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 @Repository
 public class ProductRepository {
@@ -43,7 +40,7 @@ public class ProductRepository {
     }
 
     public Map<String, List<Product>> findAllInMap() {
-        return productMap;
+        return new TreeMap<>(productMap);
     }
 
     private void addToElseList(Product product) {
