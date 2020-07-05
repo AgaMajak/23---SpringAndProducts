@@ -1,9 +1,9 @@
 package com.exercises.springproducts.data;
 
 public class Product {
-    String name;
-    double price;
-    Category category;
+    private String name;
+    private double price;
+    private Category category;
 
     public Product() {
     }
@@ -26,12 +26,15 @@ public class Product {
         return category;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", category=" + category +
-                '}';
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
