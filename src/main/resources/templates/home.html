@@ -9,7 +9,10 @@
 </div>
 <h2>Kategorie</h2>
 <ul>
-    <li th:each="key:${productMap.keySet()}"><a th:href="@{|/lista?kategoria=${key}|}" th:text="${key}"> </a></li>
+    <li><a href="/lista?kategoria=">Wszystkie produkty</a></li>
+    <li><a href="/lista?kategoria=FOOD">Artykuły spożywcze</a></li>
+    <li><a href="/lista?kategoria=HOUSEHOLDS_GOODS">Artykuły gospodarstwa domowego</a></li>
+    <li><a href="/lista?kategoria=ELSE">Inne</a></li>
 </ul>
 <form method="post" th:action="@{/dodaj}" th:object="${newProduct}">
     <h4>Dodaj produkt do bazy</h4>
@@ -17,9 +20,9 @@
         <input type="text" placeholder="Podaj nazwę..." th:field="*{name}"><br/>
         <span>Cena: </span> <input type="text" placeholder="Podaj cenę..." th:field="*{price}"><br/>
         <select th:field="*{category}">
-            <option th:value="'ELSE'" th:text="Inne"></option>
-            <option th:value="'FOOD'" th:text="|Artykuły spożywcze|"></option>
-            <option th:value="'HOUSEHOLDS_GOODS'" th:text="|Artykuły gospodarstwa domowego|"></option>
+            <option th:each="category : ${T(com.exercises.springproducts.data.Category).values()}"
+                    th:value="${category}" th:text="${category.name}">
+            </option>
         </select>
         <input type="submit" value="Dodaj"/>
     </div>

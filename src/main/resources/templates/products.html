@@ -16,7 +16,7 @@
         </tr>
     </thread>
     <tbody>
-    <tr th:if="${productMap.containsKey(category)}" th:each="product:${productMap.get(category)}">
+    <tr th:each="product:${products}">
         <td th:text="${product.name}"></td>
         <td th:text="|${product.price} zł|"></td>
     </tr>
