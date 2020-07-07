@@ -32,6 +32,7 @@ public class ProductController {
     @GetMapping("/lista")
     public String list(Model model, @RequestParam(name = "kategoria", required = false) Category category) {
         model.addAttribute("category", category);
+
         Optional<Category> categoryOptional = Optional.ofNullable(category);
 
         if (categoryOptional.isEmpty()) {

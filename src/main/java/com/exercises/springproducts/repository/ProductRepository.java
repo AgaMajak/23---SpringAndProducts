@@ -15,14 +15,12 @@ public class ProductRepository {
 
     public ProductRepository() {
         productList = new ArrayList<>();
-
         productList.add(new Product("Spodnie damskie", 74.99, Category.ELSE));
         productList.add(new Product("Maskotka pluszowa", 29.90, Category.ELSE));
         productList.add(new Product("Czajnik elektryczny", 40.00, Category.HOUSEHOLDS_GOODS));
         productList.add(new Product("Termometr elektroniczny", 14.50, Category.HOUSEHOLDS_GOODS));
         productList.add(new Product("Jajka", 4.99, Category.FOOD));
         productList.add(new Product("Jabłka", 2.99, Category.FOOD));
-
     }
 
     public ArrayList<Product> findAll() {
